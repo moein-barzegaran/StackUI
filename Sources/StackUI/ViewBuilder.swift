@@ -13,8 +13,9 @@ public struct ViewBuilder {
 }
 
 extension ViewBuilder {
-    public static func buildBlock(_ values: UIView...) -> [UIView] {
-        values
+    public static func buildBlock(_ values: UIView?...) -> [UIView] {
+        let unwrappedArray = values.compactMap { $0 }
+        return unwrappedArray
     }
 }
 
